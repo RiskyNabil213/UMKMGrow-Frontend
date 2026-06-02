@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const BACKEND_URL =
   process.env.BACKEND_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
-  "http://localhost:3002";
+  "https://umkmgrow-backend-production.up.railway.app";
 
 const nextConfig: NextConfig = {
   async rewrites() {
