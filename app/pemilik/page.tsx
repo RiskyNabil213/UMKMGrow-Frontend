@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import {
   Briefcase, Truck, Calculator, MessageSquare,
   Share2, ChevronRight, TrendingUp, Users, Star, Zap,
+  Wallet, Package,
 } from "lucide-react";
 
 const quickActions = [
@@ -82,6 +83,33 @@ export default function PemilikDashboard() {
               </div>
               <ChevronRight size={16} className="text-gray-300 group-hover:text-orange-400 transition-colors shrink-0" />
             </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Ringkasan Usaha */}
+      <div>
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-sm font-bold text-gray-700 uppercase tracking-wider">Ringkasan Usaha</h3>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[
+            { icon: Wallet,    iconBg: "bg-orange-100", iconColor: "text-orange-600", label: "Estimasi Omzet", value: "Rp 15.000.000", trend: "+12%", up: true },
+            { icon: TrendingUp,iconBg: "bg-green-100",  iconColor: "text-green-600",  label: "Laba Bersih",    value: "Rp 3.250.000",  trend: "+8%",  up: true },
+            { icon: Package,   iconBg: "bg-blue-100",   iconColor: "text-blue-600",   label: "Produk Aktif",   value: "150 Unit",       trend: "-3%",  up: false },
+          ].map((s) => (
+            <div key={s.label} className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-all">
+              <div className="flex items-start justify-between mb-4">
+                <div className={`w-10 h-10 ${s.iconBg} rounded-xl flex items-center justify-center`}>
+                  <s.icon size={20} className={s.iconColor} />
+                </div>
+                <span className={`text-xs font-bold px-2 py-1 rounded-lg ${s.up ? "bg-green-50 text-green-600" : "bg-red-50 text-red-500"}`}>
+                  {s.trend}
+                </span>
+              </div>
+              <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">{s.label}</p>
+              <p className="text-xl font-black text-gray-800 mt-1">{s.value}</p>
+            </div>
           ))}
         </div>
       </div>

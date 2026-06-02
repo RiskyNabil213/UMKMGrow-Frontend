@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Mail, Lock, Eye, EyeOff, User, Building2, Loader2, UserCog, Store, CheckCircle2 } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, User, Building2, Loader2, Store, CheckCircle2 } from "lucide-react";
 import { useAuth, type UserRole } from "@/context/UserContext";
 
 const ROLES: {
@@ -15,7 +15,6 @@ const ROLES: {
   activeBorder: string;
   activeBg: string;
   iconBg: string;
-  dot: string;
 }[] = [
   {
     value:        "customer",
@@ -26,7 +25,6 @@ const ROLES: {
     activeBorder: "border-teal-400",
     activeBg:     "bg-teal-50",
     iconBg:       "bg-teal-100",
-    dot:          "bg-teal-500",
   },
   {
     value:        "pemilik_usaha",
@@ -37,18 +35,6 @@ const ROLES: {
     activeBorder: "border-orange-400",
     activeBg:     "bg-orange-50",
     iconBg:       "bg-orange-100",
-    dot:          "bg-orange-500",
-  },
-  {
-    value:        "admin",
-    label:        "Admin",
-    desc:         "Kelola seluruh konten dan pengguna platform",
-    icon:         UserCog,
-    color:        "text-indigo-600",
-    activeBorder: "border-indigo-400",
-    activeBg:     "bg-indigo-50",
-    iconBg:       "bg-indigo-100",
-    dot:          "bg-indigo-500",
   },
 ];
 
@@ -94,7 +80,7 @@ export default function RegisterPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message ?? "Registrasi gagal");
       await login(form.email, form.password);
-      router.push(selectedRole === "admin" ? "/admin" : "/");
+      router.push(selectedRole === "pemilik_usaha" ? "/pemilik" : "/");
     } catch (err: any) {
       setError(err.message ?? "Registrasi gagal. Coba lagi.");
     } finally {

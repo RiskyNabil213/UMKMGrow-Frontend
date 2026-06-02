@@ -3,8 +3,8 @@
 import Link from "next/link";
 import {
   Bell, Lightbulb, Calculator, MessageSquare, Briefcase, Truck,
-  Share2, TrendingUp, ArrowUpRight, Sparkles, Crown, ChevronRight,
-  Wallet, Package, Clock,
+  Share2, ArrowUpRight, Sparkles, Crown, ChevronRight,
+  Clock,
 } from "lucide-react";
 import { useAuth } from "@/context/UserContext";
 
@@ -130,13 +130,36 @@ export default function Home() {
       {/* ── Stats Row ── */}
       <section>
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-base font-bold text-gray-800">Ringkasan Usaha</h3>
-          <button className="text-xs text-indigo-600 font-semibold hover:underline">Lihat Detail</button>
+          <h3 className="text-base font-bold text-gray-800">Aktivitas Terbaru</h3>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <StatCard icon={Wallet}      iconBg="bg-orange-100" iconColor="text-orange-600" label="Estimasi Omzet" value="Rp 15.000.000" trend="+12%" trendUp />
-          <StatCard icon={TrendingUp}  iconBg="bg-green-100"  iconColor="text-green-600"  label="Laba Bersih"    value="Rp 3.250.000"  trend="+8%"  trendUp />
-          <StatCard icon={Package}     iconBg="bg-blue-100"   iconColor="text-blue-600"   label="Produk Aktif"   value="150 Unit"       trend="-3%"  trendUp={false} />
+          <div className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-all">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center">
+                <MessageSquare size={20} className="text-indigo-600" />
+              </div>
+            </div>
+            <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">AI Konsultasi</p>
+            <p className="text-xl font-black text-gray-800 mt-1">Siap Membantu</p>
+          </div>
+          <div className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-all">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
+                <Calculator size={20} className="text-green-600" />
+              </div>
+            </div>
+            <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Kalkulator</p>
+            <p className="text-xl font-black text-gray-800 mt-1">Hitung Laba</p>
+          </div>
+          <div className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-all">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center">
+                <Briefcase size={20} className="text-orange-600" />
+              </div>
+            </div>
+            <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Lowongan</p>
+            <p className="text-xl font-black text-gray-800 mt-1">Cari Karyawan</p>
+          </div>
         </div>
       </section>
 
@@ -204,22 +227,4 @@ export default function Home() {
   );
 }
 
-function StatCard({ icon: Icon, iconBg, iconColor, label, value, trend, trendUp }: {
-  icon: React.ElementType; iconBg: string; iconColor: string;
-  label: string; value: string; trend: string; trendUp: boolean;
-}) {
-  return (
-    <div className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-all">
-      <div className="flex items-start justify-between mb-4">
-        <div className={`w-10 h-10 ${iconBg} rounded-xl flex items-center justify-center`}>
-          <Icon size={20} className={iconColor} />
-        </div>
-        <span className={`text-xs font-bold px-2 py-1 rounded-lg ${trendUp ? "bg-green-50 text-green-600" : "bg-red-50 text-red-500"}`}>
-          {trend}
-        </span>
-      </div>
-      <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">{label}</p>
-      <p className="text-xl font-black text-gray-800 mt-1">{value}</p>
-    </div>
-  );
-}
+
