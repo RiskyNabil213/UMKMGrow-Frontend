@@ -22,11 +22,8 @@ export default function PemilikLowonganPage() {
 
   const defaultCompany = user?.businessName || user?.name || "Toko Saya";
 
-  const jobs = useMemo(() => {
-    const key = defaultCompany.trim().toLowerCase();
-    if (!key) return lowongan;
-    return lowongan.filter((j) => j.company.trim().toLowerCase() === key);
-  }, [lowongan, defaultCompany]);
+  // Tampilkan semua lowongan (tidak filter per company agar semua yang ditambahkan terlihat)
+  const jobs = useMemo(() => lowongan, [lowongan]);
 
   const [search,   setSearch]   = useState("");
   const [modal,    setModal]    = useState(false);
