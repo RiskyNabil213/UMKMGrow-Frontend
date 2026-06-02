@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import {
   Users, BarChart3, Settings, LogOut,
-  Crown, TrendingUp, Package, AlertCircle, ChevronRight,
+  Crown, TrendingUp, Package, AlertCircle, ChevronRight, Database,
 } from "lucide-react";
 
 export default function AdminPage() {
@@ -35,6 +35,7 @@ export default function AdminPage() {
     { icon: Users,      label: "Manajemen Pengguna", desc: "Lihat & kelola semua akun",       color: "text-indigo-600", bg: "bg-indigo-50",  href: "/admin/pengguna"   },
     { icon: BarChart3,  label: "Laporan & Analitik", desc: "Statistik platform lengkap",      color: "text-blue-600",   bg: "bg-blue-50",    href: "/admin/analitik"   },
     { icon: Package,    label: "Manajemen Konten",   desc: "Kelola lowongan & supplier",      color: "text-purple-600", bg: "bg-purple-50",  href: "/admin/konten"     },
+    { icon: Database,   label: "Database",           desc: "Lihat semua data real-time",      color: "text-green-600",  bg: "bg-green-50",   href: "/admin/database"   },
     { icon: Settings,   label: "Pengaturan Sistem",  desc: "Konfigurasi platform",            color: "text-gray-600",   bg: "bg-gray-100",   href: "/admin/pengaturan" },
   ];
 
