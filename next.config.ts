@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
-const BACKEND_URL =
-  process.env.BACKEND_URL ??
-  process.env.NEXT_PUBLIC_API_URL ??
-  "https://umkmgrow-backend-production.up.railway.app";
+const BACKEND_URL = "https://umkmgrow-backend-production.up.railway.app";
 
 const nextConfig: NextConfig = {
   async rewrites() {
