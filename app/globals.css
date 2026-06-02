@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* Aktifkan dark mode via class untuk Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Warna komponen light mode */
+  --card-bg:        #ffffff;
+  --card-bg-alt:    #f9fafb;
+  --input-bg:       #f9fafb;
+  --border-color:   #e5e7eb;
+  --border-subtle:  #f3f4f6;
+  --text-primary:   #1f2937;
+  --text-secondary: #374151;
+  --text-muted:     #6b7280;
+  --text-faint:     #9ca3af;
+}
+
+/* Dark mode variables */
+.dark {
+  --background:     #0f0f0f;
+  --foreground:     #f0f0f0;
+  --card-bg:        #1a1a1a;
+  --card-bg-alt:    #141414;
+  --input-bg:       #1e1e1e;
+  --border-color:   #2d2d2d;
+  --border-subtle:  #222222;
+  --text-primary:   #f0f0f0;
+  --text-secondary: #d4d4d4;
+  --text-muted:     #9a9a9a;
+  --text-faint:     #666666;
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ── Dark mode overrides ─────────────────────────────────────────────────── */
+
+/* Background */
+.dark .bg-white,
+.dark .bg-slate-50\/40 {
+  background-color: var(--card-bg) !important;
+}
+.dark .bg-gray-50,
+.dark .bg-slate-50 {
+  background-color: var(--card-bg-alt) !important;
+}
+.dark .bg-gray-100 {
+  background-color: #252525 !important;
+}
+
+/* Text */
+.dark .text-gray-900 { color: #f0f0f0 !important; }
+.dark .text-gray-800 { color: #e8e8e8 !important; }
+.dark .text-gray-700 { color: #d0d0d0 !important; }
+.dark .text-gray-600 { color: #a8a8a8 !important; }
+.dark .text-gray-500 { color: #888888 !important; }
+.dark .text-gray-400 { color: #666666 !important; }
+
+/* Border */
+.dark .border-gray-50  { border-color: #1e1e1e !important; }
+.dark .border-gray-100 { border-color: #2a2a2a !important; }
+.dark .border-gray-200 { border-color: #333333 !important; }
+.dark .border-gray-300 { border-color: #444444 !important; }
+
+/* Sidebar */
+.dark aside {
+  background-color: #141414 !important;
+  border-color: #222222 !important;
+}
+
+/* Hover states */
+.dark .hover\:bg-gray-50:hover  { background-color: #1e1e1e !important; }
+.dark .hover\:bg-indigo-50:hover { background-color: #1a1f35 !important; }
+
+/* Input, Select, Textarea */
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark select,
+.dark textarea {
+  background-color: #1e1e1e !important;
+  color: #f0f0f0 !important;
+  border-color: #333333 !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #555555 !important;
+}
+
+/* Card shadows in dark */
+.dark .shadow-sm   { box-shadow: 0 1px 3px rgba(0,0,0,0.6) !important; }
+.dark .shadow-xl   { box-shadow: 0 8px 24px rgba(0,0,0,0.7) !important; }
+.dark .shadow-2xl  { box-shadow: 0 16px 48px rgba(0,0,0,0.8) !important; }
+
+/* Backdrop / overlay */
+.dark .bg-black\/40 { background-color: rgba(0,0,0,0.7) !important; }
+
+/* Focus ring */
+.dark .focus\:ring-indigo-200:focus { --tw-ring-color: #3730a360 !important; }
+.dark .focus\:border-indigo-500:focus { border-color: #6366f1 !important; }
+.dark .focus\:border-orange-400:focus { border-color: #f97316 !important; }
