@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/context/UserContext";
 import {
   LayoutDashboard, Lightbulb, Calculator, MessageSquare,
-  Briefcase, Truck, User, Crown, Sparkles, LogOut, Users, Lock, X,
+  Briefcase, Truck, User, Crown, Sparkles, LogOut, Users, Lock, X, Settings,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -38,6 +38,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
     { icon: Briefcase,       label: "Lowongan Kerja",      href: "/lowongan" },
     { icon: Truck,           label: "Supplier",            href: "/supplier" },
     { icon: MessageSquare,   label: "AI Konsultasi",       href: "/ai-chat" },
+    { icon: Settings,        label: "Pengaturan",          href: "/pengaturan" },
   ];
 
   const premiumItems = [

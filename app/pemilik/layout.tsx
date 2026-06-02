@@ -7,7 +7,7 @@ import Link from "next/link";
 import {
   LayoutDashboard, Briefcase, Truck, Calculator,
   MessageSquare, Share2, User, LogOut, Store, Crown, Sparkles,
-  Menu, X,
+  Menu, X, Settings,
 } from "lucide-react";
 
 const menuItems = [
@@ -18,6 +18,7 @@ const menuItems = [
   { icon: MessageSquare,   label: "AI Konsultasi",  href: "/pemilik/ai-chat" },
   { icon: Share2,          label: "Promosi AI",     href: "/pemilik/promosi" },
   { icon: User,            label: "Profil",         href: "/pemilik/profil" },
+  { icon: Settings,        label: "Pengaturan",     href: "/pengaturan" },
 ];
 
 const PAGE_TITLES: Record<string, string> = {
