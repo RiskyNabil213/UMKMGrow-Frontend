@@ -134,9 +134,17 @@ function CheckoutContent() {
       const { snapToken, orderId, simulation, snapRedirectUrl } = await res.json();
       if (!orderId) throw new Error("Order ID tidak diterima");
 
-      // Mode simulasi → ke halaman simulasi (pilih metode di sana)
+      // Mode simulasi → ke halaman simulasi lokal
       if (simulation) {
-        router.push(snapRedirectUrl);
+        // Ambil query params dari snapRedirectUrl dan redirect ke path lokal
+        try {
+          const url = new URL(snapRedirectUrl);
+          const params = url.searchParams.toString();
+          router.push(`/payment/simulate?${params}`);
+        } catch {
+          // Fallback kalau URL tidak valid
+          router.push(`/payment/simulate?order_id=${orderId}&plan=${plan}&billing=${billing}&amount=${PRICES[plan]?.[billing] ?? 99000}`);
+        }
         return;
       }
 
