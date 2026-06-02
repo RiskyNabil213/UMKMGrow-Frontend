@@ -18,17 +18,18 @@ const menuItems = [
   { icon: MessageSquare,   label: "AI Konsultasi",  href: "/pemilik/ai-chat" },
   { icon: Share2,          label: "Promosi AI",     href: "/pemilik/promosi" },
   { icon: User,            label: "Profil",         href: "/pemilik/profil" },
-  { icon: Settings,        label: "Pengaturan",     href: "/pengaturan" },
+  { icon: Settings,        label: "Pengaturan",     href: "/pemilik/pengaturan" },
 ];
 
 const PAGE_TITLES: Record<string, string> = {
-  "/pemilik":            "Dashboard",
-  "/pemilik/lowongan":   "Lowongan Kerja",
-  "/pemilik/supplier":   "Supplier",
-  "/pemilik/kalkulator": "Kalkulator",
-  "/pemilik/ai-chat":    "AI Konsultasi",
-  "/pemilik/promosi":    "Promosi AI",
-  "/pemilik/profil":     "Profil",
+  "/pemilik":                 "Dashboard",
+  "/pemilik/lowongan":        "Lowongan Kerja",
+  "/pemilik/supplier":        "Supplier",
+  "/pemilik/kalkulator":      "Kalkulator",
+  "/pemilik/ai-chat":         "AI Konsultasi",
+  "/pemilik/promosi":         "Promosi AI",
+  "/pemilik/profil":          "Profil",
+  "/pemilik/pengaturan":      "Pengaturan Usaha",
 };
 
 export default function PemilikLayout({ children }: { children: React.ReactNode }) {
