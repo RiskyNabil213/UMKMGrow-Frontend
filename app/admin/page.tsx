@@ -14,8 +14,8 @@ export default function AdminPage() {
 
   // Redirect jika bukan admin
   useEffect(() => {
-    if (user && role === "customer") {
-      router.replace("/");
+    if (user && role !== "admin") {
+      router.replace("/login");
     }
   }, [user, role, router]);
 
@@ -132,12 +132,6 @@ export default function AdminPage() {
             Kamu login sebagai Admin. Kelola pengguna dan konten platform dengan bijak.
           </p>
         </div>
-
-        {/* Kembali ke customer view */}
-        <button onClick={() => router.push("/")}
-          className="w-full py-3 border border-gray-200 rounded-2xl text-sm font-semibold text-gray-500 hover:bg-gray-50 transition-all">
-          Lihat sebagai Customer →
-        </button>
       </div>
     </div>
   );
