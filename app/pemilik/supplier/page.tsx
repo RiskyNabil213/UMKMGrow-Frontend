@@ -294,7 +294,7 @@ export default function PemilikSupplierPage() {
                       Harga {s.price}
                     </span>
                   </div>
-                  <Link href={`/supplier/${s.id}`}>
+                    <Link href={`/supplier/${s.id}`}>
                     <button className="w-full flex items-center justify-center gap-2 py-3 bg-gray-50 text-gray-700 border border-gray-200 rounded-2xl text-sm font-bold hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all">
                       <Phone size={15} /> Hubungi Supplier
                     </button>
