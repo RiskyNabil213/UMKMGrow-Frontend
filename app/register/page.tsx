@@ -79,6 +79,18 @@ export default function RegisterPage() {
         headers: { "Content-Type": "application/json" },
         body:    JSON.stringify({ ...form, role: selectedRole }),
       });
+
+      // Cek content-type sebelum parse JSON
+      const contentType = res.headers.get("content-type") ?? "";
+      if (!contentType.includes("application/json")) {
+        const text = await res.text();
+        console.error("Non-JSON response:", res.status, text.slice(0, 200));
+        if (res.status === 404) throw new Error("Endpoint tidak ditemukan. Periksa URL backend.");
+        if (res.status >= 500) throw new Error("Server backend sedang bermasalah. Coba beberapa saat lagi.");
+        if (res.status === 0 || !res.ok) throw new Error("Tidak dapat terhubung ke server. Periksa koneksi.");
+        throw new Error(`Server error (${res.status}). Coba lagi.`);
+      }
+
       const data = await res.json();
       if (!res.ok) throw new Error(data.message ?? "Registrasi gagal");
       await login(form.email, form.password);
