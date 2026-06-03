@@ -97,7 +97,7 @@ export default function PemilikPengaturanPage() {
           </div>
         </div>
       ) : (
-        <Link href="/upgrade">
+        <Link href="/pemilik/upgrade">
           <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-5 flex items-center gap-4 hover:opacity-90 transition-opacity">
             <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center shrink-0">
               <Crown size={22} className="text-yellow-300" />

@@ -117,7 +117,7 @@ export default function PemilikLayout({ children }: { children: React.ReactNode 
               <p className="text-[10px] font-bold text-white uppercase tracking-widest">Upgrade Premium</p>
             </div>
             <p className="text-xs text-orange-100 mb-3">Fitur AI tak terbatas.</p>
-            <Link href="/upgrade" onClick={() => setSidebarOpen(false)}>
+            <Link href="/pemilik/upgrade" onClick={() => setSidebarOpen(false)}>
               <button className="w-full bg-white text-orange-600 py-2 rounded-lg text-xs font-bold shadow-sm hover:bg-orange-50 transition-colors">
                 Upgrade Sekarang ✨
               </button>
