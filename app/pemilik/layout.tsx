@@ -7,7 +7,7 @@ import Link from "next/link";
 import {
   LayoutDashboard, Briefcase, Truck, Calculator,
   MessageSquare, Share2, User, LogOut, Store, Crown, Sparkles,
-  Menu, X, Settings,
+  Menu, X, Settings, Users,
 } from "lucide-react";
 
 const menuItems = [
@@ -17,6 +17,7 @@ const menuItems = [
   { icon: Calculator,      label: "Kalkulator",     href: "/pemilik/kalkulator" },
   { icon: MessageSquare,   label: "AI Konsultasi",  href: "/pemilik/ai-chat" },
   { icon: Share2,          label: "Promosi AI",     href: "/pemilik/promosi" },
+  { icon: Users,           label: "Komunitas",      href: "/pemilik/komunitas" },
   { icon: User,            label: "Profil",         href: "/pemilik/profil" },
   { icon: Settings,        label: "Pengaturan",     href: "/pemilik/pengaturan" },
 ];
@@ -28,6 +29,7 @@ const PAGE_TITLES: Record<string, string> = {
   "/pemilik/kalkulator":      "Kalkulator",
   "/pemilik/ai-chat":         "AI Konsultasi",
   "/pemilik/promosi":         "Promosi AI",
+  "/pemilik/komunitas":       "Komunitas",
   "/pemilik/profil":          "Profil",
   "/pemilik/pengaturan":      "Pengaturan Usaha",
 };
